@@ -1,0 +1,14 @@
+1) 5
+2) -99
+3) 11
+4) -9
+5) 0xbfff0010
+6) m[2][0]
+7) *(p+8). Generalizando *(p+ f*C + c)
+8) Cualquier cosa ó Segmentation Fault, porque el puntero no está asignado a ningún espacio de memoria.
+9) Caso a) porque se pueden manipular los datos sin modificar la estructura de la lista ni tener que copiarlos a otras estructuras
+10)
+    a) 0x67 & 0x55 = 0x45 (69)
+    b) 0x88 | 0x14 = 154 (0x9a)
+    c) 0x64 ^ 0x36 = 0x4c (76)
+    d) ~0x77 | 3   = 0x8b (139)

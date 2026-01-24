@@ -1,0 +1,10 @@
+ID: 18	s: 1949191	Mod a: 32205	Mod b: 13691
+ID: 9	s: 3718667	Mod a: 52370	Mod b: 10664
+ID: 4	s: 7622445	Mod a: 45144	Mod b: 15505
+ID: 11	s: 1854736	Mod a: 4427	Mod b: 13343
+ID: 17	s: 6043064	Mod a: 48863	Mod b: 12244
+ID: 8	s: 7510644	Mod a: 15628	Mod b: 6568
+ID: 15	s: 4102676	Mod a: 38644	Mod b: 1498
+ID: 27	s: 3174002	Mod a: 40546	Mod b: 13436
+ID: 17	s: 1679757	Mod a: 23072	Mod b: 5430
+ID: 30	s: 4381068	Mod a: 52926	Mod b: 4369
