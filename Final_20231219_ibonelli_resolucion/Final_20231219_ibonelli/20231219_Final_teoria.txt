@@ -1,0 +1,26 @@
+1. Indique qué sucede con la memoria en cada una de las siguientes líneas (se recomienda acompañar la explicación con un dibujo de la misma).
+Indique además si el programa compilará o correrá correctamente:
+
+01> 	int main(void) {
+02> 		int *p;                            // Creamos la variable puntero "p" que apunta a una variable del tipo int
+03> 		p = malloc(sizeof(float) * 10);    // Pedimos una cantidad de memoria que sirve para 10 variables del tipo float, pero el puntero que C nos devuelve a esta memoria lo asignamos a un puntero del tipo int.
+04> 		*(p+3) = 1.5;                      // Guardamos el float "1.5" en la posición de memoria resultante de desplazarnos 3 posiciones desde el puntero "p" como si fuera un int.
+05> 		p++;                               // Incrementamos p, esto hace que en p ya no se encuentre el comienzo de la memoria que nos asignamos. Si bien esto es posible, no es aconsejable.
+06> 		p[4] = 3.5;                        // Guardamos el float "3.5" en la posición de memoria resultante de desplazarnos 4 posiciones desde el puntero "p" como si fuera un int. Pero como ya lo desplazamos a "p" en una posición en la línea anterior, la posición es la quinta.
+07> 		free(p+15);                        // Intentamos liberar la posición de memoria p+15. Esto va a dar error ya que no pedimos esa memoria. Uno debe liberar "p", pero como en la línea 5 hicimos p++ ya no lo tenemos.
+08> 	}
+
+Este programa compilará sin errores, pero no correrá correctamente debido a la línea 5 y 7. Si bien no tiene mucho sentido reservar "float" y recorrerlo con punteros a "int", desde el punto de vista de C el puede hacer lo que le pedimos (con excepción del error en la línea 7). El error en la línea 7 generará un error al correr el programa, pero no al compilarlo.
+
+2. ¿Cuál tipo de puntero devuelve malloc()? ¿Por qué?
+
+Devuelve un puntero de tipo puntero a void (void *). C no sabe a que vamos a apuntar, solo reserva la memoria. Es responsabilidad del programador decidir que tipo de memoria es y realizar el casting apropiado.
+
+3. ¿En que situaciones el uso de un puntero a función nos puede ayudar? De un ejemplo practico de uso de punteros a función.
+
+Los podemos usar por ejemplo de forma de reemplazar un switch/case o también las podemos usar para pasar funciones como parámetro a otras funciones.
+
+4. ¿Cuál es la diferencia entre una cola circular compacta (tipo vector) y una cola simplemente enlazada? Presente un ejemplo típico de uso de cada una de ellas y explique las ventajas y desventajas de solución. 
+
+Las colas circulares compactas tienen un límite de posiciones, pero son más rápidas de recorrer. Por lo tanto son preferibles para procesar eventos de hardware. Un ejemplo de esto es almacenar datos que vienen de fuera de la PC como un ADC por ejemplo.
+Una cola simplemente enlazada no tiene límite de posiciones y es mucho más sencillo hacer crecer. Pero cada nodo que agregamos o borramos requiere mucho más tiempo de procesamiento. Esto la hace más util para procesar datos cuando los tiempos no son importantes y no hay restricciones en el uso de la memoria.
